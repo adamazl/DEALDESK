@@ -24,13 +24,13 @@ function calculateNewRevenue(dealAmount, previousARR, currentARR) {
     }
 }
 
-// Example inputs
+// Example inputs: INPUT VALUES HERE !!!!!!!
 const previousARR = 10000; // 2023 ARR
 const currentARR = 8000;  // 2024 ARR
 const dealAmount = 4000;  // New 2024 Deal Amount
 
-const nextYearARR = 9000; // 2025 ARR
-const nextYearDealAmount = 3000; // New 2025 Deal Amount
+const nextYearARR = 12000; // 2025 ARR
+const nextYearDealAmount = 1000; // New 2025 Deal Amount
 
 // Calculate renewal and new revenue for 2024
 const renewalRevenue2024 = calculateRenewalRevenue(previousARR, currentARR, dealAmount);
