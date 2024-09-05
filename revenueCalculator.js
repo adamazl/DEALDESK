@@ -2,13 +2,13 @@
 
 // Function to calculate renewal revenue
 function calculateRenewalRevenue(previousARR, currentARR, dealAmount) {
-    if (previousARR >= currentARR) {
-        if (dealAmount >= (previousARR - currentARR)) {
-            return previousARR - currentARR;
+    if (previousARR >= currentARR) { // If previous year ARR is more than or equal to this year's ARR
+        if (dealAmount >= (previousARR - currentARR)) { // And if the amendment amount is more than or equal to the delta
+            return previousARR - currentARR; // Calculate the delta
         } else {
-            return dealAmount;
+            return dealAmount; // Else, return the amendment amount
         }
-    } else {
+    } else { // If previous year ARR is less than this year's ARR
         return 0; // No renewal revenue needed if this year's total is greater than last year's total
     }
 }
