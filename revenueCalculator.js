@@ -41,6 +41,7 @@ const renewalRevenue2025 = calculateRenewalRevenue(currentARR, nextYearARR, next
 const newRevenue2025 = calculateNewRevenue(nextYearDealAmount, currentARR, nextYearARR);
 
 // Print results to console
+console.log("");
 console.log("Inputs for 2024:");
 console.log("2023 ARR:", previousARR);
 console.log("2024 ARR:", currentARR);
