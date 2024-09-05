@@ -1,34 +1,50 @@
 # Revenue Calculator
-This program calculates these financial metrics such as `Renewal Revenue` and `New Revenue`.
 
-### Code elements:
+This is a simple web application that calculates new revenue based on deal amount and company delta.
 
-1. **`exports.main` Function**: This is the entry point for the function. In serverless environments, this is where you define the logic that will be executed when the function is triggered.
+## Features
 
-2. **Event and Callback**: The `event` parameter represents the input to the function (such as data passed to the function), and `callback` is used to return results or respond to the function call.
+- Input deal amount and company delta.
+- Calculate new revenue based on the formula:
+    - If company delta is negative, new revenue = max(0, deal amount + company delta)
+    - Otherwise, new revenue = max(0, deal amount)
 
-3. **Variable Declarations**: Variables like `currentARR`, `dealAmount`, and `previousARR` are used to hold values for calculations. In a real-world scenario, these might come from the `event` object.
+## Installation
 
-4. **Functions**:
-   - `calculateRenewalRevenue`: Computes the renewal revenue based on the difference between `previousARR` and `currentARR`, and the `dealAmount`.
-   - `calculateNewRevenue`: Determines the new revenue, considering the `dealAmount`, `previousARR`, and `currentARR`.
+Follow these steps to set up and run the project locally:
 
-5. **Console Logging**: Outputs the results of the calculations to the console.
+1. **Clone the repository**:
+    ```
+    git clone https://github.com/adamazl/Revenue-Calculator.git
+    ```
 
-6. **Callback**: The `callback` function is used to return the computed `newRevenue` and `renewalRevenue` as output fields.
+2. **Open the project in Visual Studio Code**:
+    ```
+    cd revenue-calculator
+    code .
+    ```
 
-### Understanding the Code
+3. **Install Live Server**:
+    - Open Visual Studio Code.
+    - Go to Extensions (Ctrl+Shift+X) and search for `Live Server`.
+    - Click `Install`.
 
-- **Renewal Revenue Calculation**: The function checks if `previousARR` is greater than or equal to `currentARR`. If so, it calculates renewal revenue based on whether `dealAmount` is sufficient to cover the difference.
-  
-- **New Revenue Calculation**: The function calculates new revenue by taking into account the `dealAmount` and the difference between `previousARR` and `currentARR`.
+4. **Run the project**:
+    - Right-click on `index.html` and select `Open with Live Server`.
+    - The application will open in your default browser.
 
-# Installation Guide
+## Files
 
-1. Open folder on your IDE (Visual Studio Code is recommended).
-2. Download and install Node.js from this [link](nodejs.org "nodejs.org"). Choose the LTS version for stability.
-3. Run command in terminal to initialize Node.js project:```npm init -y```.
-4. Execute script:```node revenueCalculator.js``` to run the script.
+- `index.html`: The main HTML file containing the structure of the app.
+- `styles.css`: The CSS file for styling the app.
+- `script.js`: The JavaScript file for handling the revenue calculation.
 
-# Important Note
-Please do not push **private information** online as this is a **public repository**.
+## Usage
+
+1. Enter a deal amount in the input field.
+2. Enter a company delta value.
+3. Click "Calculate" to see the new revenue result.
+
+## License
+
+This project is open-source under the [MIT License](LICENSE).
